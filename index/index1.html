@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>滇池学院</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        <link href="../bootstrap-5/css/bootstrap-grid.min.css" rel="stylesheet">
+        <script src="../bootstrap/js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../bootstrap/js/bootstrap.bundle.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../bootstrap-5/js/bootstrap.bundle.min.js"></script>
+        <style>
+            /* 全局样式 */
+            body {
+                font-family: "Microsoft YaHei", sans-serif;
+            }
+
+            /* 导航栏样式 */
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .navbar-brand img {
+                height: 50px;
+                margin-right: 10px;
+                margin-left: 2px;
+            }
+            .dropdown-menu {
+                border: none;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .dropdown-item:hover {
+                background-color: #f8f9fa;
+            }
+
+            /* 轮播图样式 */
+            .carousel-item img {
+                width: 100%;
+                height: 800px;
+                object-fit: cover;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-color: rgba(0,0,0,0.5);
+                border-radius: 50%;
+                padding: 20px;
+            }
+
+            /* 内容区域样式优化 */
+            .content-section {
+                padding: 100px 0;
+            }
+            .content-section h1 {
+                margin-bottom: 60px;
+                color: #333;
+                position: relative;
+                padding-bottom: 20px;
+            }
+            .content-section h1:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background-color: #17a2b8;
+            }
+            .content-section p {
+                line-height: 2;
+                color: #666;
+                margin-bottom: 20px;
+                font-size: 1.1rem;
+            }
+            .content-section .img-wrapper {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            .content-section .img-wrapper:hover {
+                transform: translateY(-5px);
+            }
+            .content-section .img-wrapper img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+            .content-section .img-wrapper:hover img {
+                transform: scale(1.05);
+            }
+            .content-section .text-content {
+                padding: 30px;
+            }
+            .content-section .row {
+                margin-bottom: 50px;
+            }
+            .content-section .col-lg-6 {
+                margin-bottom: 30px;
+            }
+
+            /* 表格样式 */
+            .table {
+                margin-top: 20px;
+            }
+            .table th {
+                background-color: #f8f9fa;
+                font-weight: 600;
+            }
+            .table td {
+                vertical-align: middle;
+            }
+            .btn-info {
+                background-color: #17a2b8;
+                border-color: #17a2b8;
+                transition: all 0.3s ease;
+            }
+            .btn-info:hover {
+                background-color: #138496;
+                border-color: #117a8b;
+                transform: translateY(-2px);
+            }
+
+            /* 页脚样式 */
+            footer {
+                background-color: #f8f9fa;
+                padding: 30px 0;
+                margin-top: 50px;
+                border-top: 1px solid #dee2e6;
+            }
+            footer a {
+                color: #6c757d;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            footer a:hover {
+                color: #343a40;
+            }
+
+            /* 响应式调整 */
+            @media (max-width: 992px) {
+                .content-section {
+                    padding: 60px 0;
+                }
+                .content-section h1 {
+                    margin-bottom: 40px;
+                }
+                .content-section .text-content {
+                    padding: 20px 0;
+                }
+                .content-section .img-wrapper {
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../img/logo.webp" alt="滇池学院logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-between">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ml-5" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                                学院首页
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#section1">学院简介</a>
+                                <a class="dropdown-item" href="#section2">学院历史</a>
+                                <a class="dropdown-item" href="#section3">教学单位</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index/index2.html">学院美食</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index/index3.html">校园生活</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 轮播图 -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/nav1.jpg" class="d-block w-100" alt="校园风光">
+                    <div class="carousel-caption">
+                        <h3>滇池学院</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/nav02.jpg" class="d-block w-100" alt="校园活动">
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/nav03.jpg" class="d-block w-100" alt="校园生活">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- 内容区域 -->
+        <div id="section1" class="content-section">
+            <div class="container">
+                <h1 class="text-center">学院简介</h1>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="text-content">
+                            <p class="text-justify">滇池学院（原云南大学滇池学院）创办于2001年，2023年10月，经教育部批准，转设更名为滇池学院，是一所以培养高素质应用型职业人才为目标的应用型本科院校。现有经、法、教育、文、理、工、管、艺术等8个学科门类，50个本科专业，11个分院、2个公共教学部。全日制在校学生近25000人；已为社会培养了7.5万余名毕业生。</p>
+                            <p class="text-justify">学校现有昆明滇池国家旅游度假区、昆明杨林和昆明阳宗海三个校区，占地面积1288亩，校园建筑面积54万平方米（规划建筑面积100万平方米）。教学、科研仪器设备总值9650余万元，图书馆藏书320.16万册，校园网络出口宽带3.5万兆。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-wrapper">
+                            <img src="../img/1002.webp" alt="学院简介" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学院历史 -->
+        <div id="section2" class="content-section bg-light">
+            <div class="container">
+                <h1 class="text-center">学院历史</h1>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="text-content" style="background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 30px; height: 100%;">
+                            <p class="text-justify">1999年云南大学提出采取校企联合办学模式组建成立云南大学二级学院云南大学华美学院；2000年2月18日，云南省教育厅批复同意云南大学与云南滇池教育培训有限公司联合创办云南大学华美学院，同年4月1日，经云南大学与云南鸿宇集团有限公司、云南锡业公司协商，三方决定共建云南大学华美学院，该学院为隶属于云南大学的二级学院。</p>
+                            <p class="text-justify">2001年4月20日，中共云南大学委员会批复同意"云南大学华美学院"更名为"云南大学滇池学院"；2004年1月18日，中华人民共和国教育部批准云南大学滇池学院转为独立学院；2023年10月，经中华人民共和国教育部批准，学校转设更名为滇池学院，同时取消云南大学滇池学院建制。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; height: 100%;">
+                            <video style="width: 100%; height: 400px; object-fit: cover;" controls>
+                                <source src="../video/202406211741359.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 教学单位 -->
+        <div id="section3" class="content-section">
+            <div class="container">
+                <h1 class="text-center">教学单位</h1>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>教学单位</th>
+                                <th>咨询电话</th>
+                                <th>查看详情</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>理工学院（School of Science and Technology）</td>
+                                <td>0871-64315055</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/ligong/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>商学院（School of business）</td>
+                                <td>0871-64315215</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/shangxueyuan/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>法学院（School of Law）</td>
+                                <td>0871-64316806</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/faxue/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>体育学院（school of physical）</td>
+                                <td>0871-64570771</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/tiyu/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>人文学院（school humanities）</td>
+                                <td>0871-64316369</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/renwen/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>外国语学院（school of foreign languages）</td>
+                                <td>0871-64312817</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/waiyu/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>建筑工程学院（school of architecture and civil engineering）</td>
+                                <td>0871-64573037</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/jiangong/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>艺术学院（school of art）</td>
+                                <td>0871-64312817</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/yishu/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>创新创业学院（school of lnnovation and Entrepreneurship）</td>
+                                <td>0871-64570308</td>
+                                <td><a href="schools/innovation.html" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>马克思主义学院（school of marxism）</td>
+                                <td>0871-64312765</td>
+                                <td><a href="schools/marxism.html" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>大学外语教学部（department of college foreign languages teaching）</td>
+                                <td>0871-64319772</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/dawai/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                            <tr>
+                                <td>基础教学部（department of basic colloge courses teaching）</td>
+                                <td>0871-64312765</td>
+                                <td><a href="https://www.dcc.edu.cn/schools/2024/jichujiaoxue/" class="btn btn-info btn-sm" target="_blank">查看详情</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a href="../HTML/index03.html" class="mx-3">联系我们</a>
+                        <a href="../index.html" class="mx-3">版权免责声明</a>
+                        <a href="../index.html" class="mx-3">京ICP备08217577号15</a>
+                        <a href="../index.html" class="mx-3"> <p>地址：云南省昆明市滇池国家旅游度假区</p></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
